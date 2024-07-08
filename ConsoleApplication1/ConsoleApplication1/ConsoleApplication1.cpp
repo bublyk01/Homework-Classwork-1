@@ -1,15 +1,20 @@
 #include <iostream>
 
-class dog {
+class animal {
 public:
-	void sound() {
+	virtual void say() const = 0;
+};
+
+class dog : public animal {
+public:
+	void say() const override {
 		std::cout << "ruff" << std::endl;
 	}
 };
 
-class cat {
+class cat : public animal {
 public:
-	void sound() {
+	void say() const override {
 		std::cout << "meow" << std::endl;
 	}
 };
@@ -18,8 +23,8 @@ int main() {
 	dog Dog;
 	cat Cat;
 
-	Dog.sound();
-	Cat.sound();
+	Dog.say();
+	Cat.say();
 
 	return 0;
 }
