@@ -1,18 +1,25 @@
 #include <iostream>
 
-void dog();
-void cat();
+class dog {
+public:
+	void sound() {
+		std::cout << "ruff" << std::endl;
+	}
+};
+
+class cat {
+public:
+	void sound() {
+		std::cout << "meow" << std::endl;
+	}
+};
 
 int main() {
-	dog();
-	cat();
+	dog Dog;
+	cat Cat;
+
+	Dog.sound();
+	Cat.sound();
+
 	return 0;
-}
-
-void dog() {
-	std::cout << "ruff" << std::endl;
-}
-
-void cat() {
-	std::cout << "meow" << std::endl;
 }
